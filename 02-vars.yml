@@ -16,6 +16,8 @@
 
 - name: Demo on CLI variable
     hosts: all
+    vars:
+     - vars.yml
     tasks:
       - name: Print URL
         debug:
