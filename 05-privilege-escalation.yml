@@ -1,0 +1,7 @@
+- name:
+  host: all
+  tasks:
+    - shell: id
+      register: out
+    - debug:
+        mag: "{{out.stdout}}"

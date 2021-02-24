@@ -1,0 +1,10 @@
+- name: Demo on conditional
+  hosts: all
+  tasks:
+    - name: execute if centosos machine
+      debug:
+        msg: i am centos
+    - name: execute if centosos debian
+        debug:
+          msg: I am debian
+
