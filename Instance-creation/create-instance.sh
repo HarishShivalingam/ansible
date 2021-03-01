@@ -20,3 +20,6 @@ export IPADDRESS
 envsubst <record.json >/tmp/"${component}".json
 
 aws route53 change-resource-record-sets --hosted-zone-id Z03472882U8QD5D0VHNE4 --change-batch file:///tmp/${component}.json
+
+PUBLIC_IPADDRESS=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=${component}" --query 'Reservations[*].Instances[*].PublicIpAddress' --output text)
+echo
